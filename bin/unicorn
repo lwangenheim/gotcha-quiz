@@ -1,0 +1,27 @@
+#!/usr/bin/env sh
+
+pwd=`pwd`
+app='athena'
+
+case "$1" in
+  start)
+    unicorn --config-file $pwd/config/unicorn.rb --env development --daemonize $pwd/config.ru
+    ;;
+  stop)
+    kill -QUIT `cat $pwd/tmp/pids/unicorn.pid`
+    ;;
+  reboot)
+    script/unicorn stop  && echo "Unicorn stopped... starting"
+    script/unicorn start && echo "Unicorn started"
+    ;;
+  restart)
+    kill -USR2 `cat $pwd/tmp/pids/unicorn.pid`
+    ;;
+  status)
+    ps aux | grep 'unicorn' | grep $app
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|reboot|restart|status}"
+    exit 1
+    ;;
+esac

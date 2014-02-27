@@ -1,0 +1,19 @@
+base: &base
+  adapter: mysql2
+  host: localhost
+  username: root
+  password:
+  pool: 5
+  timeout: 5000
+
+development: 
+  database: gotcha-quiz_dev
+  <<: *base
+
+test:
+  database: gotcha-quiz_test
+  <<: *base
+
+production: 
+  database: gotcha-quiz_pro
+  <<: *base

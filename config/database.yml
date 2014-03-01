@@ -16,4 +16,6 @@ test:
 
 production: 
   database: gotcha-quiz_pro
-  <<: *base
+  adapter: postgresql
+  pool: 5
+  username: gotcha

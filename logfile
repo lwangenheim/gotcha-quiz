@@ -1,0 +1,10 @@
+LOG:  database system was shut down at 2014-03-01 13:26:23 EST
+LOG:  database system is ready to accept connections
+LOG:  autovacuum launcher started
+FATAL:  database "leewangenheim" does not exist
+FATAL:  database "leewangenheim" does not exist
+FATAL:  database "leewangenheim" does not exist
+FATAL:  database "leewangenheim" does not exist
+FATAL:  database "gotcha-quiz_pro" does not exist
+FATAL:  database "leewangenheim" does not exist
+FATAL:  role "gotcha" does not exist

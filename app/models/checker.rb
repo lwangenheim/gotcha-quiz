@@ -8,8 +8,10 @@ class Checker
   end
 
   def check_all
-    answers.each do |id, choice|
-      check Answers.find(id), choice 
+    unless answers == nil    
+      answers.each do |id, choice|
+        check Answers.find(id), choice 
+      end
     end
   end
   

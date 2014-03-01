@@ -1,5 +1,5 @@
 class Add < ActiveRecord::Migration
   def change
-    add_column :answer, :question, :string
+    execute "ALTER TABLE answers ADD COLUMN question varchar[] DEFAULT '{English}'"
   end
 end

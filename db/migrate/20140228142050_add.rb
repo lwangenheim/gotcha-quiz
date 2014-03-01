@@ -1,5 +1,5 @@
 class Add < ActiveRecord::Migration
   def change
-    add_column :answers, :question, :string
+    add_column :answer, :question, :string
   end
 end

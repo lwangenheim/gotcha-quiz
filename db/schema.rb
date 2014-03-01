@@ -11,6 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140228142901) do
+
+  create_table "answers", force: true do |t|
+    t.string "question",   null: false
+    t.string "selection1",  null: false
+    t.string "selection2",  null: false
+    t.string "selection3",  default: nil
+    t.string "selection4",  default: nil
+    t.string "correct",    null: false
+  end
 
 end

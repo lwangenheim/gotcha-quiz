@@ -1,0 +1,26 @@
+.row-fluid
+  .h1 
+    Quiz
+    .h5
+      = form_for :questions, url: quiz_path do |f|
+        - @answers.each do |answer|
+          %br
+          = f.label :content, answer.question
+          %br
+          - (1..4).each do |number|
+            = f.radio_button answer.id, answer.selections[number]
+            = f.label :answer, answer.selections[number]
+            %br
+            -# = f.label :selection, "#{answer.selection2}"
+            -# = f.radio_button "selection#{answer.id}", "#{answer.selection2}"
+            -# %br
+            -# = f.label :selection, "#{answer.selection3}"
+            -# = f.radio_button "selection#{answer.id}", "#{answer.selection3}"
+            -# %br
+            -# = f.label :selection, "#{answer.selection4}"
+            -# = f.radio_button "selection#{answer.id}", "#{answer.selection4}"
+            -# %br
+        %button.primary Finished
+        
+      
+

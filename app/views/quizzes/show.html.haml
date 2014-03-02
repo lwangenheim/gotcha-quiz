@@ -2,14 +2,16 @@
   .row-fluid
     .h1 
       Quiz
-      .h5
-        = form_for :questions, url: quiz_path do |f|
-          - @answers.each do |answer|
-            %br
-            = f.label :content, "#{answer.id}) #{answer.question}"
-            %br
-            - (1..4).each do |number|
-              = f.radio_button answer.id, answer.selections[number]
-              = f.label :answer, answer.selections[number]
+      .h3
+        Warning: Taking this quiz may result in ulcers!
+        .h5
+          = form_for :questions, url: quiz_path do |f|
+            - @answers.each do |answer|
               %br
-          = button_to("Finished", class: "submit")
+              = f.label :content, "#{answer.id}) #{answer.question}"
+              %br
+              - (1..4).each do |number|
+                = f.radio_button answer.id, answer.selections[number]
+                = f.label :answer, answer.selections[number]
+                %br
+            = button_to("Finished", class: "submit")

@@ -1,7 +1,7 @@
-class Answers < ActiveRecord::Base
+class Questions < ActiveRecord::Base
 
   def questions
-    @answers.each
+    @questions.each
   end
   
   def selections

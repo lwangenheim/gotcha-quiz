@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
  
   def show
-    @answers = Answers.all
+    @answers = Questions.all
   end
   
   def create

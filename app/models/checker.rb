@@ -1,6 +1,6 @@
 class Checker
 
-  attr_accessor :score, :answers
+  attr_accessor :score, :answers, :total
 
   def initialize(answers)
     self.score = 0
@@ -10,7 +10,7 @@ class Checker
   def check_all
     unless answers == nil    
       answers.each do |id, choice|
-        check Answers.find(id), choice 
+        check Questions.find(id), choice 
       end
     end
   end
